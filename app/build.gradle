@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+//butterknife
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
@@ -26,4 +28,28 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
+
+    //数据库litepal
+    compile 'org.litepal.android:core:1.4.1'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    //recyclerview
+    compile 'com.android.support:recyclerview-v7:25.0.0'
+    //RxJava的依赖包（我使用的最新版本）
+    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+    compile 'org.reactivestreams:reactive-streams:1.0.0'
+    //RxAndroid的依赖包
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //retrofit的依赖包,retrofit就是对okhttp做了一层封装
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'//Retrofit2所需要的包
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'//AdapterFactory的依赖包
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'//ConverterFactory的Gson依赖包
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'//ConverterFactory的String依赖包
+    //okhttp的依赖
+    compile 'com.squareup.okhttp3:okhttp:3.3.0'
+    compile 'com.squareup.okio:okio:1.7.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    //glide依赖
+    compile 'com.github.bumptech.glide:glide:3.5.2'
 }

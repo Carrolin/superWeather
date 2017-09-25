@@ -1,0 +1,9 @@
+<litepal>
+    <dbname value="super_weather"></dbname>
+    <version value="1"></version>
+    <list>
+        <mapping class="com.test.xrh.superweather.db.Province"></mapping>
+        <mapping class="com.test.xrh.superweather.db.City"></mapping>
+        <mapping class="com.test.xrh.superweather.db.County"></mapping>
+    </list>
+</litepal>

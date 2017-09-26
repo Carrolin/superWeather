@@ -1,6 +1,7 @@
 package com.test.xrh.superweather;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -41,7 +42,7 @@ public class ChooseAreaFragment extends Fragment {
     public static final String PROVINCE = "province";
     public static final String CITY = "city";
     public static final String COUNTY = "county";
-    public static final String baseUrl="http://guolin.tech/api/china";
+    public static final String baseUrl="http://guolin.tech/aqi/china";
     private TextView title;
     private Button back;
     private ListView mLv;
@@ -85,6 +86,12 @@ public class ChooseAreaFragment extends Fragment {
                 }else if(currentLevel == LEVEL_CITY){
                     selectedCity = mCityList.get(i);
                     queryCounties();
+                }else if (currentLevel == LEVEL_COUNTY){
+                    String weatherId = mCountyList.get(i).getWeatherId();
+                    Intent intent = new Intent(getActivity(),WeatherActivity.class);
+                    intent.putExtra("weather",weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
